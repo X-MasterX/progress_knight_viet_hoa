@@ -146,7 +146,7 @@ const metaverseUnlocks = ["Reduce Boost Cooldown", "Increase Boost Duration", "I
     "Essence gain multiplier", "Challenges are not reset", "Dark Matter gain multiplier"]
 
 const jobBaseData = {
-    "Beggar": { name: "Beggar", maxXp: 50, income: 5, heroxp: 36 },
+    "Beggar": { name: "Ăn mày", maxXp: 50, income: 5, heroxp: 36 },
     "Farmer": { name: "Farmer", maxXp: 100, income: 9, heroxp: 37 },
     "Fisherman": { name: "Fisherman", maxXp: 200, income: 15, heroxp: 38 },
     "Miner": { name: "Miner", maxXp: 400, income: 40, heroxp: 39 },
