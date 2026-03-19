@@ -2,10 +2,10 @@
     taskData: {},
     itemData: {},
 
-    coins: 2123456789,
+    coins: 9e99,
     days: 365 * 14,
     totalDays: 0,
-    evil: 0,
+    evil: 9e99,
     evil_perks_points: 0,
     evil_perks: {
         reduce_eye_requirement: 0,
@@ -15,11 +15,11 @@
         receive_essence: 0
     },
     evil_perks_keep: false,
-    essence: 0,
-    dark_matter: 0,
-    dark_orbs: 0,
-    hypercubes: 0,
-    perks_points: 0,
+    essence: 9e99,
+    dark_matter: 9e99,
+    dark_orbs: 9e99,
+    hypercubes: 9e99,
+    perks_points: 9e99,
     perks: {
         auto_dark_orb: 0,
         auto_dark_shop: 0,
@@ -78,7 +78,7 @@
         EvilPerSecond: 0,
         maxEvilPerSecond: 0,
         maxEvilPerSecondRt: 0,
-        EssencePerSecond: 999999999999999,
+        EssencePerSecond: 0,
         maxEssencePerSecond: 0,
         maxEssencePerSecondRt: 0,
         maxEssenceReached: 0,
