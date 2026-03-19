@@ -8,21 +8,21 @@
 	<link rel="stylesheet" type="text/css" href="css/dark.css">
 	<link rel="stylesheet" type="text/css" href="css/colorblind.css">
 	<link rel="stylesheet" type="text/css" href="css/currencies.css">
-	<title>Progress Knight Quest</title>
+	<title>Anh Hùng Tiến Hoá</title>
 	<link rel="shortcut icon" href="img/logo.ico" />
 </head>
 <body id="body" class="dark" style="font-size: x-small">
 	<div class="w3-margin">
 		<div class="header">
 			<img src="img/logos.png" alt="logos" />
-			<h3>Progress Knight Quest</h3>
+			<h3>Anh Hùng Tiến Hoá</h3>
 		</div>
 		<div id="offline_progress" hidden="hidden" class="panel w3-margin-left">
 			<h2>
 				<div>
-					<div style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%; text-align: center;">Offline Progress: <span id="offline_time"></span></div>
+					<div style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%; text-align: center;">Tiến độ nền: <span id="offline_time"></span></div>
 					<div>
-						<button id="skipButton" class="w3-button baritem button" style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%" onClick="stopOffline()">Skip</button>
+						<button id="skipButton" class="w3-button baritem button" style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%" onClick="stopOffline()">Bỏ qua</button>
 					</div>
 				</div>
 			</h2>
@@ -33,28 +33,28 @@
 				</div>
 				<div class="column" >
 					<div id="tabcolumn" class="panel w3-margin-left tabs-tab-column">
-						<div class="w3-button w3-bar-item tabButton baritem" id="infoTabButton" onClick="setTab('info')">Info</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="jobsTabButton" onClick="setTab('jobs')">Hero</div>
-						<div class="w3-button w3-bar-item tabButton baritem hidden" id="skillsTabButton" onClick="setTab('skills')">Skills</div>
-						<div class="w3-button w3-bar-item tabButton baritem hidden" id="shopTabButton" onClick="setTab('shop')">Shop</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="evilperksTabButton" onClick="setTab('evilperks')">Evil perks</div>					
-						<div class="w3-button w3-bar-item tabButton baritem" id="challengesTabButton" onClick="setTab('challenges')">Challenges</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="milestonesTabButton" onClick="setTab('milestones')">Milestones</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="rebirthTabButton" onClick="setTab('rebirth')">Amulet</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="darkMatterTabButton" onClick="setTab('darkMatter')">Dark Matter</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="metaverseTabButton" onClick="setTab('metaverse')">Metaverse</div>
-						<div class="w3-button w3-bar-item tabButton baritem" id="settingsTabButton" onClick="setTab('settings')">Settings</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="infoTabButton" onClick="setTab('info')">Thông tin</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="jobsTabButton" onClick="setTab('jobs')">Anh Hùng</div>
+						<div class="w3-button w3-bar-item tabButton baritem hidden" id="skillsTabButton" onClick="setTab('skills')">Kĩ năng</div>
+						<div class="w3-button w3-bar-item tabButton baritem hidden" id="shopTabButton" onClick="setTab('shop')">Cửa Hàng</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="evilperksTabButton" onClick="setTab('evilperks')">Đặc quyền độc ác</div>					
+						<div class="w3-button w3-bar-item tabButton baritem" id="challengesTabButton" onClick="setTab('challenges')">Thử thách</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="milestonesTabButton" onClick="setTab('milestones')">Thành tích</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="rebirthTabButton" onClick="setTab('rebirth')">Dây chuyền</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="darkMatterTabButton" onClick="setTab('darkMatter')">Vật chất tối</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="metaverseTabButton" onClick="setTab('metaverse')">Thế giới song song</div>
+						<div class="w3-button w3-bar-item tabButton baritem" id="settingsTabButton" onClick="setTab('settings')">Cài đặt</div>
 					</div>
 					<div id="maincolumn" class="panel w3-margin-left w3-margin-top w3-padding tabs-main-column">
 						<div id="hero">
 							<template class="headerRowTaskTemplate">
 								<tr>
-									<th class="rowtitle category">Job</th>
-									<th class="rowtitle">Level</th>
-									<th class="rowtitle valueType">Value type</th>
+									<th class="rowtitle category">Nghề</th>
+									<th class="rowtitle">Cấp</th>
+									<th class="rowtitle valueType">Loại</th>
 									<th class="rowtitle">XP</th>
-									<th class="rowtitle">XP&nbsp;left</th>
-									<th class="rowtitle maxLevel">Max</th>
+									<th class="rowtitle">XP&nbsp;cần</th>
+									<th class="rowtitle maxLevel">Tối đa</th>
 								</tr>
 							</template>
 							<template class="rowTaskTemplate">
@@ -62,11 +62,11 @@
 									<td>
 										<div class="progress-bar progressBar tooltip">
 											<div class="progress-fill progressFill"></div>
-											<div class="progress-text name">Task</div>
+											<div class="progress-text name">Ngành</div>
 											<span class="tooltipText"></span>
 										</div>
 									</td>
-									<td class="level">Level</td>
+									<td class="level">Cấp</td>
 									<td class="value">
 										<div class="effect"></div>
 										<div class="income">
@@ -77,21 +77,21 @@
 										</div>
 									</td>
 									<td class="xpGain">Xp</td>
-									<td class="xpLeft">Xp left</td>
-									<td class="maxLevel">Max</td>
+									<td class="xpLeft">Xp cần</td>
+									<td class="maxLevel">Tối đa</td>
 								</tr>
 							</template>
 							<template class="headerRowItemTemplate">
 								<tr class="item-header-row" onclick="forceAutobuy()">
 									<th class="category">
 										<button class="button-no-button tooltip" style="background-color:transparent;" onclick="forceAutobuy()">
-											<span class="name">Item</span>
-											<span class="tooltipText">Click to activate auto-buy</span>
+											<span class="name">Đồ vật</span>
+											<span class="tooltipText">Ấn để kích hoạt tự động mua</span>
 										</button>
 									</th>
-									<th>On</th>
-									<th>Effect</th>
-									<th>Expense</th>
+									<th>Bật</th>
+									<th>Hiệu ứng</th>
+									<th>Chi phí</th>
 								</tr>
 							</template>
 							<template class="rowItemTemplate">
@@ -99,7 +99,7 @@
 									<td>
 										<button class="button item-button tooltip">
 											<span class="name"></span>
-											<span class="tooltipText">tooltip</span>
+											<span class="tooltipText">Gợi ý</span>
 										</button>
 									</td>
 									<td>
@@ -173,17 +173,17 @@
 										</div>
 									</div>
 									<div class="text-caption" id="errorInfo" hidden="hidden">
-										<div>⚠️ Oh no! It looks like something on the site broke.. If this issue persists, feel free to contact the developers.</div>
+										<div>⚠️ Ồ không! Có vẻ như đã xảy ra lỗi trên trang web. Nếu sự cố này vẫn tiếp diễn, vui lòng liên hệ với nhà phát triển.</div>
 										<br>
 									</div>
 									<div id="deathText" class="hidden">
-										<div class="text-caption" style="color: red">Age has caught up to you</div>
-										<div class="sidebar-element" style="color: gray">Your age has met your lifespan; use the amulet to rebirth before you pass away</div>
+										<div class="text-caption" style="color: red">Tuổi tác đã đuổi kịp bạn</div>
+										<div class="sidebar-element" style="color: gray">Tuổi của bạn đã đáp ứng tuổi thọ của bạn; sử dụng bùa hộ mệnh để tái sinh trước khi bạn qua đời</div>
 									</div>
-									<div class="text-caption"><span id="ageDisplay">Age 14 Day 0</span></div>
+									<div class="text-caption"><span id="ageDisplay">Tuổi 14 Ngày 0</span></div>
 									<div class="sidebar-element" style="color: gray">
-										Lifespan: <span id="lifespanDisplay">70</span> years
-										<br>Real Time: <span id="realtimeDisplay">00:00:00</span>
+										Tuổi thọ: <span id="lifespanDisplay">70</span> years
+										<br>Thời gian thực: <span id="realtimeDisplay">00:00:00</span>
 										<div id="fps"></div>
 									</div>
 									<button id="pauseButton" class="w3-button button" onClick="togglePause()">Pause</button>
@@ -198,10 +198,10 @@
 										<span></span>
 										<span></span>
 									</div>
-									<div style="color: gray">Balance</div>
+									<div style="color: gray">Túi tiền</div>
 									<ul class="sidebar-element" style="padding-left: 1em;">
 										<li>
-											<span class="color-hypercubes">Net: </span><b id="signDisplay"></b>
+											<span class="color-hypercubes">Tổng cộng: </span><b id="signDisplay"></b>
 											<div id="netDisplay" style="display: inline;">
 												<span></span>
 												<span></span>
@@ -211,7 +211,7 @@
 											</div>
 										</li>
 										<li>
-											<span class="color-income">Income: </span>
+											<span class="color-income">Thu nhập: </span>
 											<div id="incomeDisplay" style="display: inline;">
 												<span></span>
 												<span></span>
@@ -221,7 +221,7 @@
 											</div>
 										</li>
 										<li>
-											<span style="color: red">Expense: </span>
+											<span style="color: red">Chi tiêu: </span>
 											<div id="expenseDisplay" style="display: inline;">
 												<span></span>
 												<span></span>
@@ -240,31 +240,31 @@
 									<div class="text-caption" style="padding-top: 0.2em"><span class="color-happiness">Niềm hạnh phúc: </span><span id="happinessDisplay"></span></div>
 									<div style="color: gray" class="sidebar-element">Tăng tất cả XP</div>
 									<div id="evilInfo" class="hidden">
-										<div class="text-caption"><span class="color-evil">Evil: </span><span id="evilDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">Affects Dark Magic XP gain</div>
+										<div class="text-caption"><span class="color-evil">Ác tính: </span><span id="evilDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">Ảnh hưởng đến mức tăng XP của Ma Thuật Đen</div>
 									</div>
 									<div id="essenceInfo" class="hidden">
-										<div class="text-caption"><span class="color-essence">Essence: </span><span id="essenceDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">Affects Almightiness XP gain</div>
+										<div class="text-caption"><span class="color-essence">Tinh Chất: </span><span id="essenceDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">Ảnh hưởng đến mức tăng XP Toàn Năng</div>
 									</div>
 									<div id="darkMatterInfo" class="hidden">
-										<div class="text-caption"><span class="color-dark-matter">Dark Matter: </span><span id="darkMatterDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">Affects all XP gain</div>
+										<div class="text-caption"><span class="color-dark-matter">Ma Thuật Đen: </span><span id="darkMatterDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">Ảnh hưởng đến mức tăng của tất cả XP</div>
 									</div>
 									<div id="darkOrbsInfo" class="hidden">
-										<div class="text-caption"><span class="color-dark-orbs">Dark Orbs: </span><span id="darkOrbsDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">Used to buy items in the Dark Matter shop</div>
+										<div class="text-caption"><span class="color-dark-orbs">Quả cầu Bóng Tối: </span><span id="darkOrbsDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">Dùng để mua vật phẩm trong cửa hàng Vật Chất Tối</div>
 									</div>
 									<div id="timeWarping">
-										<div class="text-caption"><span class="color-time-warping">Time Warping: </span><span id="timeWarpingDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">Affects game speed</div>
+										<div class="text-caption"><span class="color-time-warping">Bẻ cong Thời Gian: </span><span id="timeWarpingDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">Ảnh hưởng tốc độ trò chơi</div>
 									</div>
 									<div id="hypercubesInfo">
-										<div class="text-caption"><span class="color-hypercubes">Hypercubes: </span><span id="hypercubesDisplay"></span></div>
-										<div style="color: gray" class="sidebar-element">for Metaverse sacrifices</div>
+										<div class="text-caption"><span class="color-hypercubes">Siêu Khối: </span><span id="hypercubesDisplay"></span></div>
+										<div style="color: gray" class="sidebar-element">cho sự hy sinh của Đa Vũ Trụ</div>
 									</div>
 									<div id="rebirthButton1" class="hidden">
-										<button class="w3-button button" style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%" onClick="rebirthOne()">Chọt Con Mắt</button>
+										<button class="w3-button button" style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100%" onClick="rebirthOne()">Chạm vào</button>
 									</div>
 									<div id="rebirthButton2" class="hidden">
 										<button class="w3-button button" style="margin-bottom: 0.1em; margin-top: 0.8em; width: 100% " onClick="rebirthTwo()">Embrace evil: <span class="color-evil" id="evilGainButtonDisplay"></span></button>
@@ -444,27 +444,25 @@
 									<div id="rebirthPage" class="page panel page-column">
 										<ul>
 											<li id="rebirthNote0" class="hidden">
-												You stumble across a strange looking amulet on your <span id="age0"></span>th birthday. It does not look like
-												it has any worth on the market given that it's made from cheap-looking copper. However, you
-												feel a weird urge to keep the amulet, so you slip it into your pocket for safekeeping.
+												Bạn tình cờ nhìn thấy một chiếc bùa hộ mệnh có hình dáng kỳ lạ vào ngày sinh nhật thứ <span id="age0"></span>của mình. Nó trông không giống
+												nó có giá trị trên thị trường vì nó được làm từ đồng trông rẻ tiền. Tuy nhiên, bạn
+												cảm thấy có một sự thôi thúc kỳ lạ muốn giữ chiếc bùa hộ mệnh nên bạn nhét nó vào túi để cất giữ an toàn.
 											</li>
 											<li id="rebirthNote1" class="hidden">
-												On your <span id="age1"></span>th birthday, you feel the amulet shiver uncontrollably in your pocket. You take it
-												out and the constant shivering suddenly stops. More to your bizarre surprise, you notice
-												a strange etching on the centre of the amulet.
+												Vào sinh nhật lần thứ <span id="age1"></span>của mình, bạn cảm thấy chiếc bùa hộ mệnh run rẩy không kiểm soát trong túi mình. Bạn lấy nó
+												ra ngoài và cơn run rẩy liên tục đột nhiên dừng lại. Thêm vào sự ngạc nhiên kỳ lạ của bạn, bạn nhận thấy một hình khắc kỳ lạ ở giữa tấm bùa.
 											</li>
 											<li id="rebirthNote2" class="hidden">
 												<div style="margin-bottom: 0.4em">
-													On your <span id="age1a"></span>th birthday, you once again encounter the strange, unexplained shivering from your
-													amulet. But this time, a living eyeball emerges from the centre. Although terribly frightened,
-													you realise you do not have many years to live left anyway so you consider touching the eye
-													to see what happens.
+													Vào sinh nhật lần thứ <span id="age1a"></span> của mình, bạn một lần nữa gặp phải hiện tượng run rẩy kỳ lạ không giải thích được từ cơ thể mình.
+													Nhưng lần này, một nhãn cầu sống xuất hiện từ giữa. Dù vô cùng sợ hãi, bạn nhận ra rằng dù sao thì bạn cũng không còn sống được bao nhiêu năm nữa
+													nên bạn cân nhắc việc chạm vào mắt để xem điều gì sẽ xảy ra.
 												</div>
 												<i style="color: grey">
-													By touching the eyeball, you will be reborn and have to restart life again, losing all your levels and coins.
-													However, you will gain <b>xp multipliers</b> for your heroes and skills equivalent to: <b>1 + the max level of the hero or skill / 10.</b>
-													This means you will learn everything again much more quickly than you did in your previous life. <span class="color-evil">
-														Something tells you that the amulet might evolve after living for <b><span id="age2"></span></b>...
+													Khi chạm vào nhãn cầu, bạn sẽ được tái sinh và phải bắt đầu lại cuộc sống, mất tất cả cấp độ và tiền xu của mình.
+													Tuy nhiên, bạn sẽ nhận được <b>hệ số xp</b> cho các anh hùng và kỹ năng của mình tương đương với: <b>1 + cấp tối đa của anh hùng hoặc kỹ năng / 10.</b>
+													Điều này có nghĩa là bạn sẽ học lại mọi thứ nhanh hơn nhiều so với những gì bạn đã học ở kiếp trước.
+													<span class="color-evil">Điều gì đó cho bạn biết rằng tấm bùa hộ mệnh có thể tiến hóa sau khi sống trong <b><span id="age2"></span></b>...
 													</span>
 												</i>
 												<br>
@@ -473,10 +471,9 @@
 											</li>
 											<li id="rebirthNote3" class="hidden">
 												<div style="margin-bottom: 0.4em;">
-													Your gut instinct was right. The moment you hit the grand age of <span id="age2a"></span>, you hear an ominous hum coming from the amulet.
-													A mouth emerges from its surface and begins to cackle, and proceeds to say: "So you've made it this far... Are you ready to embrace evil?"
-													<br><span class="color-evil">
-														The amulet might transform even further after living for <b><span id="age3"></span></b>.
+													Bản năng ruột thịt của bạn đã đúng. Vào thời điểm bạn bước sang tuổi <span id="age2a"></span>, bạn sẽ nghe thấy một tiếng vo ve đáng ngại phát ra từ chiếc bùa hộ mệnh.
+													Một cái miệng nhô ra khỏi bề mặt của nó và bắt đầu cười khẩy, rồi nói: "Vậy là bạn đã đi xa đến mức này ... Bạn đã sẵn sàng đón nhận cái ác chưa?"
+													<br><span class="color-evil">Chiếc bùa hộ mệnh có thể còn biến đổi hơn nữa sau khi sống trong <b><span id="age3"></span></b>.
 													</span>
 												</div>
 												<i class="color-evil">
