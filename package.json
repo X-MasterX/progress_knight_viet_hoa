@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Sự tiếp nối của Progress Knight 2.0. Chứa 5 lớp hồi sinh với nhiều cơ chế độc đáo khác nhau.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/X-MasterX/progress_knight_viet_hoa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/X-MasterX/progress_knight_viet_hoa/issues"
+  },
+  "homepage": "https://github.com/X-MasterX/progress_knight_viet_hoa#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}

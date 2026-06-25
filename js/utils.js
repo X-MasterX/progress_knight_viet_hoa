@@ -247,3 +247,7 @@ function getFormattedTitle(parameter) {
 
     return title
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { getBaseLog };
+}
