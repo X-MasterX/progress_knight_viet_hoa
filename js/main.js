@@ -1485,7 +1485,7 @@ function exportGameData() {
 function copyTextToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         const tooltip = document.getElementById("exportTooltip");
-        tooltip.innerHTML = "&nbsp;&nbsp;Save copied to clipboard!" ;
+        tooltip.textContent = "\u00A0\u00A0Save copied to clipboard!";
     }, err => {
         //console.error('Async: Could not copy text: ', err);
     })
