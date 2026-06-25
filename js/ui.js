@@ -503,12 +503,31 @@ function renderCurrentChallengeReward(blockclass) {
     }
 }
 
-function renderCurrentChallengeRewardValue(side_bar = false) {
+const uiCache = {
+    currentChallengeBuff: {},
+    sidebarCurrentChallengeBuff: {},
+    sidebarChallengeBuff: {}
+};
 
-    for (var i = 1; i <= Object.keys(gameData.challenges).length; i++) {
-        document.getElementById((side_bar ? "sidebarC" : "c") + "urrentChallengeBuff" + i).textContent = format(getChallengeBonus(i, true), 2)
-        if (side_bar)
-            document.getElementById("sidebarChallengeBuff" + i).textContent = format(getChallengeBonus(i), 2)
+function renderCurrentChallengeRewardValue(side_bar = false) {
+    const numChallenges = Object.keys(gameData.challenges).length;
+    for (var i = 1; i <= numChallenges; i++) {
+        if (side_bar) {
+            if (!uiCache.sidebarCurrentChallengeBuff[i]) {
+                uiCache.sidebarCurrentChallengeBuff[i] = document.getElementById("sidebarCurrentChallengeBuff" + i);
+            }
+            uiCache.sidebarCurrentChallengeBuff[i].textContent = format(getChallengeBonus(i, true), 2);
+
+            if (!uiCache.sidebarChallengeBuff[i]) {
+                uiCache.sidebarChallengeBuff[i] = document.getElementById("sidebarChallengeBuff" + i);
+            }
+            uiCache.sidebarChallengeBuff[i].textContent = format(getChallengeBonus(i), 2);
+        } else {
+            if (!uiCache.currentChallengeBuff[i]) {
+                uiCache.currentChallengeBuff[i] = document.getElementById("currentChallengeBuff" + i);
+            }
+            uiCache.currentChallengeBuff[i].textContent = format(getChallengeBonus(i, true), 2);
+        }
     }    
 }
 
