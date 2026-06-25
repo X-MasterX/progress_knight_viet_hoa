@@ -1191,7 +1191,6 @@ function peekSettingFromSave(setting) {
         return gameDataSave.settings[setting]
     } catch (error) {
         console.error(error)
-        console.log(localStorage.getItem("gameDataSave"))
         alert("It looks like you tried to load a corrupted save... If this issue persists, feel free to contact the developers!")
     }
 }
@@ -1275,7 +1274,6 @@ function loadGameData() {
         }
     } catch (error) {
         console.error(error)
-        console.log(localStorage.getItem("gameDataSave"))
         alert("It looks like you tried to load a corrupted save... If this issue persists, feel free to contact the developers!")
     }
 
