@@ -89,7 +89,7 @@ function renderSideBar() {
     const quickTaskDisplayElement = document.getElementById("quickTaskDisplay")
 
     const progressBar = quickTaskDisplayElement.getElementsByClassName("job")[0]
-    progressBar.querySelector(".name").textContent = (task.isHero ? "Great " : "") + task.name + " lvl " + formatLevel(task.level)
+    progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name) + " Cấp " + formatLevel(task.level)
     const progressFill = progressBar.getElementsByClassName("progressFill")[0]
     renderProgressBar(task, progressFill, progressBar)   
 
@@ -270,7 +270,7 @@ function renderJobs() {
         gameData.rebirthOneCount > 0 ? maxLevel.classList.remove("hidden") : maxLevel.classList.add("hidden")
 
         const progressBar = task.querySelector(".progressBar", row)
-        progressBar.querySelector(".name").textContent = (task.isHero ? "Great " : "") + task.name
+        progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name)
         const progressFill = task.querySelector(".progressFill", row)
         renderProgressBar(task, progressFill, progressBar)
 
@@ -309,7 +309,7 @@ function renderSkills() {
         gameData.rebirthOneCount > 0 ? maxLevel.classList.remove("hidden") : maxLevel.classList.add("hidden")
 
         const progressBar = task.querySelector(".progressBar", row)
-        progressBar.querySelector(".name").textContent = (task.isHero ? "Great " : "") + task.name
+        progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name)
         const progressFill = task.querySelector(".progressFill", row)
         renderProgressBar(task, progressFill, progressBar)
 
@@ -358,7 +358,7 @@ function renderRebirth() {
     else if (age2req == 100)
         age2 = "1 century"
     else
-        age2 = age2req + " years"
+        age2 = age2req + " tuổi"
 
     document.getElementById("age2").textContent = age2 
     document.getElementById("age2a").textContent = age2req
@@ -855,7 +855,7 @@ function createHeaderRow(templates, categoryType, categoryName) {
 
 
     if (categoryType == jobCategories || categoryType == skillCategories) {
-        headerRow.getElementsByClassName("valueType")[0].textContent = categoryType == jobCategories ? "Income" : "Effect"
+        headerRow.getElementsByClassName("valueType")[0].textContent = categoryType == jobCategories ? "Thu Nhập" : "Hiệu ứng"
         headerRow.getElementsByClassName("valueType")[0].style.width = categoryType == jobCategories ? "8em" : "18em"
     }
 
@@ -969,7 +969,7 @@ function updateRequiredRows(data, categoryType) {
             if (data == gameData.taskData) {
                 const task = gameData.taskData[nextEntity.name]
                 effectElement.classList.remove("hiddenTask")
-                effectValueElement.textContent = task.unlocked ? (task.baseData.description != null ? task.baseData.description : "Income") : "Unknown"
+                effectValueElement.textContent = task.unlocked ? (task.baseData.description != null ? task.baseData.description : "Thu Nhập") : "Chưa rõ"
 
                 if (requirementObject instanceof EvilRequirement) {
                     evilElement.classList.remove("hiddenTask")                    
@@ -1007,7 +1007,7 @@ function updateRequiredRows(data, categoryType) {
                 const item = gameData.itemData[nextEntity.name]
                 
                 effectElement.classList.remove("hiddenTask")
-                effectValueElement.textContent = item.unlocked ? (item.baseData.description != null ? item.baseData.description : "Happiness") : "Unknown"
+                effectValueElement.textContent = item.unlocked ? (item.baseData.description != null ? item.baseData.description : "Happiness") : "Chưa rõ"
             }
             else if (data == milestoneData) {
                 essenceElement.classList.remove("hiddenTask")
@@ -1016,7 +1016,7 @@ function updateRequiredRows(data, categoryType) {
                 const milestone = milestoneData[nextEntity.name]
                 if (milestone.baseData.description != null) {
                     effectElement.classList.remove("hiddenTask")
-                    effectValueElement.textContent = (gameData.stats.maxEssenceReached > milestone.expense) ? milestone.baseData.description : "Unknown"
+                    effectValueElement.textContent = (gameData.stats.maxEssenceReached > milestone.expense) ? milestone.baseData.description : "Chưa rõ"
                 }
             }
         }
