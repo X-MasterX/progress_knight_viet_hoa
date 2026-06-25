@@ -617,18 +617,23 @@ function autoBuy() {
 
     for (const key in gameData.itemData) {
         if (gameData.requirements[key].isCompleted()) {
-            const item = gameData.itemData[key]
-            const expense = item.getExpense()
-            if (itemCategories['Misc'].indexOf(key) != -1) {
-                if (expense < income - usedExpense) {
-                    if (gameData.currentMisc.indexOf(item) == -1) {
-                        gameData.currentMisc.push(item)
-                        usedExpense += expense
-                    }
-                }
-            }
+            usedExpense = evaluateMiscItem(key, gameData.itemData[key], income, usedExpense)
         }
     }   
+}
+
+
+function evaluateMiscItem(key, item, income, usedExpense) {
+    if (itemCategories['Misc'].indexOf(key) == -1) return usedExpense
+
+    const expense = item.getExpense()
+    if (expense < income - usedExpense) {
+        if (gameData.currentMisc.indexOf(item) == -1) {
+            gameData.currentMisc.push(item)
+            return usedExpense + expense
+        }
+    }
+    return usedExpense
 }
 
 function increaseDays() {
