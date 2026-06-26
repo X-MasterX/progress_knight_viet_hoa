@@ -192,22 +192,22 @@ const perks_cost = {
 }
 
 const perk_names = {
-    auto_dark_orb: "Auto buy dark orb generators",
-    auto_dark_shop: "Auto buy dark shop items",
-    auto_boost: "Auto boost",
-    instant_evil: "Instant evil",
-    hypercube_boost: "Hypercube boost",
-    instant_essence: "Instant essence",
-    save_challenges: "Save challenges",
-    instant_dark_matter: "Instant dark matter",
-    auto_sacrifice: "Auto sacrifice",
-    double_perk_points_gain: "2x perk points gain",
-    positive_dark_mater_skills: "Only positive dark matter abilities",
-    hyper_speed: "Hyper speed",
-    both_dark_mater_skills: "Pick both dark matter abilities",
-    keep_dark_mater_skills: "keep dark matter abilities",
-    evil_booster: "Evil booster",
-    more_perk_points: "10x perk points gain",
+    auto_dark_orb: "Tự động mua máy tạo cầu tối",
+    auto_dark_shop: "Tự động mua đồ từ cửa hàng hắc ám",
+    auto_boost: "Tự động tăng tốc",
+    instant_evil: "Ác quỷ tức thì",
+    hypercube_boost: "Tăng tốc khối tesseract",
+    instant_essence: "Tinh hoa tức thì",
+    save_challenges: "Lưu thử thách",
+    instant_dark_matter: "Vật chất tối tức thì",
+    auto_sacrifice: "Tự động hiến tế",
+    double_perk_points_gain: "x2 điểm đặc quyền",
+    positive_dark_mater_skills: "Chỉ dùng kĩ năng vật chất tối hữu ích",
+    hyper_speed: "Tốc độ tối thượng",
+    both_dark_mater_skills: "Chọn cả 2 nhánh vật chất tối",
+    keep_dark_mater_skills: "Giữ lại kĩ năng vật chất tối",
+    evil_booster: "Máy kích ác quỷ",
+    more_perk_points: "x10 điểm đặc quyền",
 }
 
 function getMetaversePerkName(perkName) {    

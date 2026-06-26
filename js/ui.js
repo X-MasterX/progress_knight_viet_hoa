@@ -354,9 +354,9 @@ function renderRebirth() {
     const age2req = getEvilRequirement()
     let age2 = ""
     if (age2req == 200)
-        age2 = "2 whole centuries"
+        age2 = "2 thế kỷ"
     else if (age2req == 100)
-        age2 = "1 century"
+        age2 = "1 thế kỷ"
     else
         age2 = age2req + " tuổi"
 
@@ -371,7 +371,7 @@ function renderRebirth() {
     else if (age3req > 100)
         age3 = (age3req / 100) + " whole centuries"
     else
-        age3 = "1 century"
+        age3 = "1 thế kỷ"
     document.getElementById("age3").textContent = age3 
 
     var ones = new Array('', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten');
@@ -599,7 +599,7 @@ function renderMetaverse() {
     document.getElementById("essenceMultButton").disabled = !canBuyEssenceMult()
 
     document.getElementById("challengeAltarCost").textContent = format(challengeAltarCost())
-    document.getElementById("challengeAltarState").textContent = gameData.metaverse.challenge_altar == 0 ? "" : "Active"
+    document.getElementById("challengeAltarState").textContent = gameData.metaverse.challenge_altar == 0 ? "" : "Đang Mở"
     document.getElementById("challengeAltarButton").disabled = !canBuyChallengeAltar()
     if (gameData.metaverse.challenge_altar == 0)
         document.getElementById("challengeAltarButton").classList.remove("hidden")
@@ -655,7 +655,7 @@ function renderPerks() {
                 button.classList.remove("perk-locked")
             }
             else {
-                button.getElementsByClassName("perkName")[0].textContent = "LOCKED"
+                button.getElementsByClassName("perkName")[0].textContent = "ĐÃ KHÓA"
                 button.classList.add("perk-locked")
                 if (index % 2 == 1)
                     hide_next = true
@@ -973,21 +973,21 @@ function updateRequiredRows(data, categoryType) {
 
                 if (requirementObject instanceof EvilRequirement) {
                     evilElement.classList.remove("hiddenTask")                    
-                    evilElement.textContent = format(requirements[0].requirement) + " evil"                   
+                    evilElement.textContent = format(requirements[0].requirement) + " Ác Quỷ"
                 } else if (requirementObject instanceof EssenceRequirement) {
                     essenceElement.classList.remove("hiddenTask")
-                    essenceElement.textContent = format(requirements[0].requirement) + " essence"
+                    essenceElement.textContent = format(requirements[0].requirement) + " Tinh Hoa"
                 } else if (requirementObject instanceof DarkMatterRequirement) {
                     darkMatterElement.classList.remove("hiddenTask")
-                    darkMatterElement.textContent = format(requirements[0].requirement) + " Dark Matter"
+                    darkMatterElement.textContent = format(requirements[0].requirement) + " Vật Chất Tối"
                 } else if (requirementObject instanceof MetaverseRequirement) {
 
                 } else if (requirementObject instanceof HypercubeRequirement) {
                     hypercubeElement.classList.remove("hiddenTask")
-                    hypercubeElement.textContent = format(requirements[0].requirement) + " hypercubes"
+                    hypercubeElement.textContent = format(requirements[0].requirement) + " Khối Tesseract"
                 } else if (requirementObject instanceof AgeRequirement) {
                     essenceElement.classList.remove("hiddenTask")
-                    essenceElement.textContent = "Age " + format(requirements[0].requirement)
+                    essenceElement.textContent = "Tuổi " + format(requirements[0].requirement)
                 }
                 else {
                     levelElement.classList.remove("hiddenTask")
@@ -1007,11 +1007,11 @@ function updateRequiredRows(data, categoryType) {
                 const item = gameData.itemData[nextEntity.name]
                 
                 effectElement.classList.remove("hiddenTask")
-                effectValueElement.textContent = item.unlocked ? (item.baseData.description != null ? item.baseData.description : "Happiness") : "Chưa rõ"
+                effectValueElement.textContent = item.unlocked ? (item.baseData.description != null ? item.baseData.description : "Hạnh Phúc") : "Chưa rõ"
             }
             else if (data == milestoneData) {
                 essenceElement.classList.remove("hiddenTask")
-                essenceElement.textContent = format(requirements[0].requirement) + " essence"
+                essenceElement.textContent = format(requirements[0].requirement) + " Tinh Hoa"
 
                 const milestone = milestoneData[nextEntity.name]
                 if (milestone.baseData.description != null) {
@@ -1028,7 +1028,7 @@ function getHeroicRequiredTooltip(task) {
     const requirements = requirementObject.requirements
     const prev = getPreviousTaskInCategory(task)
 
-    let tooltip = "<br> <span style=\"color: red\">Required</span>: <span style=\"color: orange\">"
+    let tooltip = "<br> <span style=\"color: red\">Yêu Cầu</span>: <span style=\"color: orange\">"
     let reqlist = ""
     let prevReq = ""
 
@@ -1170,14 +1170,14 @@ function setLayout(id) {
         setTabDarkMatter("shopTab")
 
         document.getElementById("maincolumnDarkMatter").classList.remove("settings-main-column")
-        document.getElementById("skillTreePageDarkMaterTitle").textContent = "Dark Matter Abilities "
+        document.getElementById("skillTreePageDarkMaterTitle").textContent = "Kỹ Năng Vật Chất Tối "
     }
     else {
         document.getElementById("tabcolumnDarkMater").classList.remove("hidden")
         document.getElementById("skillTreeTab").appendChild(document.getElementById("skillTreePage"))
 
         document.getElementById("maincolumnDarkMatter").classList.add("settings-main-column")
-        document.getElementById("skillTreePageDarkMaterTitle").textContent = "Dark Matter: "
+        document.getElementById("skillTreePageDarkMaterTitle").textContent = "Vật Chất Tối: "
 
     }
 
@@ -1226,17 +1226,17 @@ function renderSkillTreeButton(element, categoryBought, elementBought, canBuy) {
 
         if (categoryBought) {
             if (elementBought) {
-                element.textContent = "Accepted"
+                element.textContent = "Đã Nhận"
                 element.classList.add("w3-green")
                 element.classList.remove("w3-red")
             } else {
-                element.textContent = "Rejected"
+                element.textContent = "Bị Từ Chối"
                 element.classList.add("w3-red")
                 element.classList.remove("w3-green")
             }
         }
         else {
-            element.textContent = "Buy"
+            element.textContent = "Mua"
             element.classList.remove("w3-green")
             element.classList.remove("w3-red")
         }
@@ -1245,11 +1245,11 @@ function renderSkillTreeButton(element, categoryBought, elementBought, canBuy) {
         element.disabled = elementBought
 
         if (elementBought) {
-            element.textContent = "Accepted"
+            element.textContent = "Đã Nhận"
             element.classList.add("w3-green")
             element.classList.remove("w3-red")
         } else {
-            element.textContent = "Buy"
+            element.textContent = "Mua"
             element.classList.remove("w3-green")
             element.classList.remove("w3-red")
         }

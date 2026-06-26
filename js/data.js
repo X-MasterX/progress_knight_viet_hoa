@@ -207,10 +207,10 @@ const skillBaseData = {
     "Time Warping": { name: "Time Warping", displayName: "Bẻ Cong Thời Gian", maxXp: 100, heroxp: 82, effect: 0.01, description: "Tốc độ trò chơi" },
     "Astral Body": { name: "Astral Body", displayName: "Cơ Thể Tinh Tú", maxXp: 100, heroxp: 100, effect: 0.0035, description: "Kéo dài tuổi thọ" },
     "Temporal Dimension": { name: "Temporal Dimension", displayName: "Chiều Không Gian Thời Gian", maxXp: 100, heroxp: 115, effect: 0.006, description: "Tốc độ trò chơi" },
-    "All Seeing Eye": { name: "All Seeing Eye", maxXp: 100, heroxp: 120, effect: 0.0027, description: "T.A.A Pay" },
-    "Brainwashing": { name: "Brainwashing", maxXp: 100, heroxp: 145, effect: -0.01, description: "Giảm chi phí" },
+    "All Seeing Eye": { name: "All Seeing Eye", displayName: "Con Mắt Toàn Tri", maxXp: 100, heroxp: 120, effect: 0.0027, description: "Lương T.A.A" },
+    "Brainwashing": { name: "Brainwashing", displayName: "Tẩy Não", maxXp: 100, heroxp: 145, effect: -0.01, description: "Giảm chi phí" },
 
-    "Dark Influence": { name: "Dark Influence", maxXp: 100, heroxp: 155, effect: 0.01, description: "Tất cả XP" },
+    "Dark Influence": { name: "Dark Influence", displayName: "Ảnh Hưởng Đen Tối", maxXp: 100, heroxp: 155, effect: 0.01, description: "Tất cả XP" },
     "Evil Control": { name: "Evil Control", displayName: "Kiểm Soát Ác Quỷ", maxXp: 100, heroxp: 156, effect: 0.01, description: "Tăng Cường Ác Quỷ" },
     "Intimidation": { name: "Intimidation", displayName: "Sự Đe Dọa", maxXp: 100, heroxp: 157, effect: -0.01, description: "Giảm chi phí" },
     "Demon Training": { name: "Demon Training", displayName: "Huấn Luyện Ác Quỷ", maxXp: 100, heroxp: 174, effect: 0.01, description: "Tất cả XP" },
