@@ -263,7 +263,7 @@ function renderJobs() {
 
         const tooltipElement = task.querySelector(".tooltipText", row)
         if (tooltipElement.innerHTML != tooltip)
-            tooltipElement.innerHTML = tooltip
+            tooltipElement.innerHTML = DOMPurify.sanitize(tooltip)
 
         const maxLevel = row.getElementsByClassName("maxLevel")[0]
         maxLevel.textContent = formatLevel(task.maxLevel)
@@ -302,7 +302,7 @@ function renderSkills() {
 
         const tooltipElement = task.querySelector(".tooltipText", row)
         if (tooltipElement.innerHTML != tooltip)
-            tooltipElement.innerHTML = tooltip
+            tooltipElement.innerHTML = DOMPurify.sanitize(tooltip)
 
         const maxLevel = task.querySelector(".maxLevel", row)
         maxLevel.textContent = formatLevel(task.maxLevel)
