@@ -1460,7 +1460,18 @@ function importGameData() {
             alert("It looks like you tried to load an empty save... Paste save data into the box, then click \"Import Save\" again.")
             return
         }
-        const data = JSON.parse(window.atob(importExportBox.value))
+        const data = JSON.parse(window.atob(importExportBox.value), (key, value) => {
+            if (key === "__proto__" || key === "constructor" || key === "prototype") {
+                return undefined
+            }
+            return value
+        })
+
+        if (!data || typeof data !== "object" || Array.isArray(data)) {
+            alert("Invalid save data format")
+            return
+        }
+
         clearInterval(gameloop)
         gameData = data
         saveGameData()
