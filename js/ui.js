@@ -89,7 +89,7 @@ function renderSideBar() {
     const quickTaskDisplayElement = document.getElementById("quickTaskDisplay")
 
     const progressBar = quickTaskDisplayElement.getElementsByClassName("job")[0]
-    progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name) + " Cấp " + formatLevel(task.level)
+    progressBar.querySelector(".name").innerHTML = sanitizeHTML((task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name) + " Cấp " + formatLevel(task.level))
     const progressFill = progressBar.getElementsByClassName("progressFill")[0]
     renderProgressBar(task, progressFill, progressBar)   
 
@@ -262,15 +262,15 @@ function renderJobs() {
         }
 
         const tooltipElement = task.querySelector(".tooltipText", row)
-        if (tooltipElement.innerHTML != tooltip)
-            tooltipElement.innerHTML = tooltip
+        if (tooltipElement.innerHTML != sanitizeHTML(tooltip))
+            tooltipElement.innerHTML = sanitizeHTML(tooltip)
 
         const maxLevel = row.getElementsByClassName("maxLevel")[0]
         maxLevel.textContent = formatLevel(task.maxLevel)
         gameData.rebirthOneCount > 0 ? maxLevel.classList.remove("hidden") : maxLevel.classList.add("hidden")
 
         const progressBar = task.querySelector(".progressBar", row)
-        progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name)
+        progressBar.querySelector(".name").innerHTML = sanitizeHTML((task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name))
         const progressFill = task.querySelector(".progressFill", row)
         renderProgressBar(task, progressFill, progressBar)
 
@@ -301,15 +301,15 @@ function renderSkills() {
         }
 
         const tooltipElement = task.querySelector(".tooltipText", row)
-        if (tooltipElement.innerHTML != tooltip)
-            tooltipElement.innerHTML = tooltip
+        if (tooltipElement.innerHTML != sanitizeHTML(tooltip))
+            tooltipElement.innerHTML = sanitizeHTML(tooltip)
 
         const maxLevel = task.querySelector(".maxLevel", row)
         maxLevel.textContent = formatLevel(task.maxLevel)
         gameData.rebirthOneCount > 0 ? maxLevel.classList.remove("hidden") : maxLevel.classList.add("hidden")
 
         const progressBar = task.querySelector(".progressBar", row)
-        progressBar.querySelector(".name").innerHTML = (task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name)
+        progressBar.querySelector(".name").innerHTML = sanitizeHTML((task.isHero ? "Vĩ Đại " : "") + (task.baseData.displayName || task.name))
         const progressFill = task.querySelector(".progressFill", row)
         renderProgressBar(task, progressFill, progressBar)
 

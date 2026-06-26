@@ -247,3 +247,30 @@ function getFormattedTitle(parameter) {
 
     return title
 }
+
+function sanitizeHTML(html) {
+    if (typeof html !== 'string') return html;
+
+    // First, escape < and >
+    let sanitized = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    // Restore allowed simple tags: <br>, </span>, <b>, </b>, <i>, </i>
+    sanitized = sanitized.replace(/&lt;br\/?&gt;/gi, "<br>");
+    sanitized = sanitized.replace(/&lt;\/span&gt;/gi, "</span>");
+    sanitized = sanitized.replace(/&lt;b&gt;/gi, "<b>");
+    sanitized = sanitized.replace(/&lt;\/b&gt;/gi, "</b>");
+    sanitized = sanitized.replace(/&lt;i&gt;/gi, "<i>");
+    sanitized = sanitized.replace(/&lt;\/i&gt;/gi, "</i>");
+
+    // Restore <span style="..."> with basic validation
+    // Match <span style="..."> or <span style='...'>
+    sanitized = sanitized.replace(/&lt;span style=(["'])([^"'>]+)\1&gt;/gi, function(match, quote, style) {
+        // basic style validation
+        if (/url\(|javascript:|expression\(/i.test(style)) {
+            return "<span>"; // strip style if it contains dangerous keywords
+        }
+        return `<span style="${style.replace(/"/g, '&quot;')}">`;
+    });
+
+    return sanitized;
+}
