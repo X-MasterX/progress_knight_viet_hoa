@@ -1,0 +1,9 @@
+🧹 [code health improvement] Extract autoBuy misc item loop logic into evaluateMiscItem
+
+🎯 **What:** The nested if logic from the third `for...in` loop inside `autoBuy` (which processes `currentMisc` items) has been extracted into a separate `evaluateMiscItem` function.
+
+💡 **Why:** This improves maintainability and readability by flattening the control flow inside the main `autoBuy` loop, abstracting away the checks for affording and adding Misc items.
+
+✅ **Verification:** Ran manual syntax checks using `node -c` and hosted the game to verify that the app successfully loads and processes the refactored loop without breaking game logic.
+
+✨ **Result:** A cleaner `autoBuy` function and isolated logic for adding currentMisc items, reducing repetitive nesting.
