@@ -837,7 +837,7 @@
 													<button class="w3-button button" onClick="importGameData()">Nhập File Lưu</button>
 													<button class="w3-button button" onClick="exportGameData()" onmouseout="outExportButton()">Xuất File Lưu</button><span class="tooltiptext" id="exportTooltip"></span>
 													<form style="margin-top: 0.8em" autocomplete="off">
-														<input id="importExportBox" placeholder="Enter save here" type="text">
+														<input id="importExportBox" placeholder="Enter save here" type="text" aria-label="Enter save here">
 													</form>
 												</div>
 											</li>
@@ -845,7 +845,7 @@
 												<div class="text-caption" style="margin-top: 0.4em;">Cài đặt</div>
 												<table class="w3-table w3-bordered">
 													<tr>
-														<td style="padding: 0.4em">Sticky sidebar</td>
+														<td style="padding: 0.4em"><label for="settingsStickySidebar">Sticky sidebar</label></td>
 														<td><input id="settingsStickySidebar" type="checkbox" style="width:1.6em;height:1.6em" onclick="setStickySidebar(this.checked)" /></td>
 													</tr>
 													<tr>
