@@ -837,7 +837,7 @@
 													<button class="w3-button button" onClick="importGameData()">Nhập File Lưu</button>
 													<button class="w3-button button" onClick="exportGameData()" onmouseout="outExportButton()">Xuất File Lưu</button><span class="tooltiptext" id="exportTooltip"></span>
 													<form style="margin-top: 0.8em" autocomplete="off">
-														<input id="importExportBox" placeholder="Enter save here" type="text">
+														<input id="importExportBox" aria-label="Enter save here" placeholder="Enter save here" type="text">
 													</form>
 												</div>
 											</li>
@@ -845,7 +845,7 @@
 												<div class="text-caption" style="margin-top: 0.4em;">Cài đặt</div>
 												<table class="w3-table w3-bordered">
 													<tr>
-														<td style="padding: 0.4em">Sticky sidebar</td>
+														<td style="padding: 0.4em"><label for="settingsStickySidebar">Sticky sidebar</label></td>
 														<td><input id="settingsStickySidebar" type="checkbox" style="width:1.6em;height:1.6em" onclick="setStickySidebar(this.checked)" /></td>
 													</tr>
 													<tr>
@@ -920,7 +920,7 @@
 												<div style="margin-bottom: 8px;">
 													Based on a <a href="https://symb1.github.io/progress_knight_2/" target="_blank">Progress Knight 2.0</a> mod
 													<br>Original game: <a href="https://ihtasham42.github.io/progress-knight/" target="_blank">Progress Knight</a>
-													<br><a href="https://discord.gg/fTRS4pHGka" target="_blank">Join the discord community! <img src="img/discord_icon.png" style="width:3em; height:3em;"></a>
+													<br><a href="https://discord.gg/fTRS4pHGka" target="_blank">Join the discord community! <img src="img/discord_icon.png" alt="Discord logo" style="width:3em; height:3em;"></a>
 													<br><a href="https://github.com/indomit/progress_knight_2" target="_blank">Github page</a>
 												</div>
 											</li>
